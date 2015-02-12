@@ -176,6 +176,19 @@ struct b2Vec3
 		x *= s; y *= s; z *= s;
 	}
 
+	/// Get the length of this vector (the norm).
+	float32 Length() const
+	{
+		return b2Sqrt(x * x + y * y + z * z);
+	}
+
+	/// Get the length squared. For performance, use this instead of
+	/// b2Vec2::Length (if possible).
+	float32 LengthSquared() const
+	{
+		return x * x + y * y + z * z;
+	}
+
 	float32 x, y, z;
 };
 
